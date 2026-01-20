@@ -1,35 +1,45 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import Alert from "./components/ui/alert/Alert"
+import { Ban, Bell, Info, CheckCheck, TriangleAlert   } from 'lucide-react';
 
-function App() {
-  const [count, setCount] = useState(0)
-
+const App = () => {
   return (
-    <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
+    <div>
+      <Alert 
+        type={"alert-default"} 
+        headerIcon={<Bell size={20}/>} 
+        title="Default Alert">
         <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
+          Lorem, ipsum dolor sit amet consectetur adipisicing elit. <a href="">Deleniti</a> eum autem itaque aliquid aut blanditiis quae provident ratione iure quos.
         </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
+
+      </Alert>
+      <Alert 
+        type={"alert-info"} 
+        headerIcon={<Info size={20}/>} 
+        title="Nevet Forget ToDo Somthing" 
+        description="Lorem ipsum dolor, sit amet consectetur adipisicing elit. Optio culpa ducimus minus. Tempore, aliquid ullam illo nulla modi molestiae repudiandae." 
+      />  
+      <Alert 
+        type={"alert-success"} 
+        headerIcon={<CheckCheck  size={20}/>} 
+        title="Login Successful" 
+        description="Lorem ipsum dolor, sit amet consectetur adipisicing elit. Optio culpa ducimus minus. Tempore, aliquid ullam illo nulla modi molestiae repudiandae." 
+      />
+      <Alert 
+        type={"alert-error"} 
+        headerIcon={<Ban size={20}/>} 
+        title="Something Went Wrong" 
+        description="Lorem ipsum dolor, sit amet consectetur adipisicing elit. Optio culpa ducimus minus. Tempore, aliquid ullam illo nulla modi molestiae repudiandae." 
+      />
+      <Alert 
+        type={"alert-warning"} 
+        headerIcon={<TriangleAlert  size={20}/>} 
+        title="Caannot Login Without Email Verification" 
+        description="Lorem ipsum dolor, sit amet consectetur adipisicing elit. Optio culpa ducimus minus. Tempore, aliquid ullam illo nulla modi molestiae repudiandae." 
+      />
+      
+    </div>
   )
 }
-
 export default App
+
